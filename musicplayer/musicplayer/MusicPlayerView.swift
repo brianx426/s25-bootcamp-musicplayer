@@ -24,23 +24,16 @@ struct MusicPlayerView: View {
                     .frame(width: 50, height: 6.5)
                     .padding(.top, 15)
                     .padding(.bottom, 30)
-                if playing {
-                    Image("album")
-                        .resizable()
-                        .frame(width: 365, height: 365)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .shadow(color: .black, radius: 12.5)
-                        .padding(.bottom, 40)
-                } else {
-                    Image("album")
-                        .resizable()
-                        .frame(width: 265, height: 265)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .shadow(color: .black, radius: 12.5)
-                        .padding(.bottom, 85)
-                        .padding(.top, 55)
-                }
                 
+                Image("album")
+                    .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .frame(width: playing ? 365 : 265, height: playing ? 365 : 265)
+                    .shadow(color: .black, radius: 12.5)
+                    .padding(.bottom, playing ? 40 : 85)
+                    .padding(.top, playing ? 0 : 55)
+
+            
                 HStack(alignment: .center, spacing: 4) {
                 
                     VStack(alignment: .leading) {
