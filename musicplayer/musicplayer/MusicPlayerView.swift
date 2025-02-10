@@ -11,7 +11,7 @@ struct MusicPlayerView: View {
     @State private var time: Double = 0
     @State private var volume: Double = 0
     @State private var playing: Bool = false
-    let duration: Double = 240 // length of song
+    let duration: Double = 181 // length of song
     
     var body: some View {
         ZStack(alignment: .top) {
